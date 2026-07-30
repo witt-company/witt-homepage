@@ -1,9 +1,19 @@
 import type { ComponentProps, ReactNode } from "react";
 
+
+
+
+
 type Variant = "primary" | "secondary" | "inverse";
+type Size = "sm" | "md";
 
 const base =
   "inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 focus-visible:ring-offset-2";
+
+const sizes: Record<Size, string> = {
+  sm: "px-4 py-2 text-sm",
+  md: "px-5 py-3 text-base",
+};
 
 const variants: Record<Variant, string> = {
   primary: "bg-primary text-white hover:bg-primary-strong",
@@ -12,17 +22,18 @@ const variants: Record<Variant, string> = {
   inverse: "bg-white text-primary-strong hover:bg-white/90",
 };
 
-type ButtonProps = { variant?: Variant; children: ReactNode } & (
+type ButtonProps = { variant?: Variant; size?: Size; children: ReactNode } & (
   ComponentProps<"button"> | (ComponentProps<"a"> & { href: string })
 );
 
 export function Button({
   variant = "primary",
+  size = "md",
   className,
   children,
   ...props
 }: ButtonProps) {
-  const classes = [base, variants[variant], className]
+  const classes = [base, sizes[size], variants[variant], className]
     .filter(Boolean)
     .join(" ");
 
