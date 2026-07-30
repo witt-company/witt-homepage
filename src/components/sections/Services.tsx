@@ -2,7 +2,7 @@ import {
   ClipboardDocumentListIcon,
   PaintBrushIcon,
   ServerIcon,
-} from "@heroicons/react/24/outline";
+} from "@heroicons/react/24/solid";
 
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";

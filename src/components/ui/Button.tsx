@@ -1,9 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
 
-
-
-
-
 type Variant = "primary" | "secondary" | "inverse";
 type Size = "sm" | "md";
 
