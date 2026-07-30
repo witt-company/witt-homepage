@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 
 import { About } from "@/components/sections/About";
 import { Hero } from "@/components/sections/Hero";
+import { Research } from "@/components/sections/Research";
 import { Services } from "@/components/sections/Services";
+import { Technology } from "@/components/sections/Technology";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
@@ -20,6 +22,8 @@ export default async function Home({
       <Hero content={dict.hero} />
       <About content={dict.about} />
       <Services content={dict.services} />
+      <Technology content={dict.technology} />
+      <Research content={dict.research} />
     </main>
   );
 }
