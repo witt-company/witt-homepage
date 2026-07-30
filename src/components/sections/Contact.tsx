@@ -13,7 +13,7 @@ type ContactProps = {
 };
 
 const inputClass =
-  "rounded-lg border border-zinc-300 bg-background px-4 py-3 focus:border-primary focus:ring-2 focus:ring-primary/30 focus:outline-none";
+  "w-full rounded-lg border border-zinc-300 bg-background px-4 py-3 text-zinc-900 placeholder:text-zinc-400 focus:border-primary focus:ring-2 focus:ring-primary/30 focus:outline-none";
 
 export function Contact({ content }: ContactProps) {
   const [name, setName] = useState("");
@@ -39,35 +39,37 @@ export function Contact({ content }: ContactProps) {
         />
         <form
           onSubmit={handleSubmit}
-          className="mx-auto mt-12 grid max-w-xl gap-4"
+          className="mx-auto mt-12 max-w-xl rounded-2xl border border-zinc-200 bg-background p-6 shadow-sm sm:p-8"
         >
-          <input
-            type="text"
-            required
-            placeholder={content.form.name}
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className={inputClass}
-          />
-          <input
-            type="email"
-            required
-            placeholder={content.form.email}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className={inputClass}
-          />
-          <textarea
-            required
-            rows={5}
-            placeholder={content.form.message}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className={inputClass}
-          />
-          <Button type="submit" className="justify-center">
-            {content.form.submit}
-          </Button>
+          <div className="grid gap-4">
+            <input
+              type="text"
+              required
+              placeholder={content.form.name}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className={inputClass}
+            />
+            <input
+              type="email"
+              required
+              placeholder={content.form.email}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className={inputClass}
+            />
+            <textarea
+              required
+              rows={5}
+              placeholder={content.form.message}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              className={inputClass}
+            />
+            <Button type="submit" className="w-full">
+              {content.form.submit}
+            </Button>
+          </div>
         </form>
       </Container>
     </Section>
