@@ -89,8 +89,13 @@
   "contact": {
     "heading": "WITT와 함께 디지털 혁신을 실현하세요.",
     "subtitle": "맞춤형 시스템 개발, 기술 제휴, 채용 등 궁금하신 사항을 남겨주시면 담당자가 신속하게 연락드리겠습니다.",
-    "cta": "이메일로 문의하기",
     "labels": { "info": "연락처", "links": "바로 가기" },
+    "form": {
+      "name": "이름",
+      "email": "이메일",
+      "message": "문의 내용",
+      "submit": "문의 보내기"
+    },
     "info": {
       "phone": "010-6850-7890",
       "email": "kkytour@gmail.com",

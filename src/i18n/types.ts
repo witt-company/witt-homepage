@@ -21,8 +21,8 @@ export type Dictionary = {
   contact: {
     heading: string;
     subtitle: string;
-    cta: string;
     labels: { info: string; links: string };
+    form: { name: string; email: string; message: string; submit: string };
     info: { phone: string; email: string; address: string };
     quickLinks: { label: string; href: string }[];
   };
