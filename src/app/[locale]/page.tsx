@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 
-import { Logo } from "@/components/ui/Logo";
 import { hasLocale } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 
