@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 
 import { About } from "@/components/sections/About";
+import { Clients } from "@/components/sections/Clients";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
 import { hasLocale } from "@/i18n/config";
@@ -20,6 +21,7 @@ export default async function Home({
       <Hero content={dict.hero} />
       <About content={dict.about} />
       <Services content={dict.services} />
+      <Clients content={dict.clients} />
     </main>
   );
 }
