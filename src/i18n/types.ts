@@ -5,15 +5,19 @@ export type Dictionary = {
   nav: {
     about: string;
     services: string;
-    technology: string;
-    research: string;
+    clients: string;
     contact: string;
   };
   hero: { eyebrow: string; title: string; subtitle: string; cta: string };
   about: { heading: string; items: Item[] };
-  services: { heading: string; subtitle: string; items: Item[] };
-  technology: { heading: string; features: Item[] };
-  research: { heading: string; subtitle: string; areas: Item[] };
+  services: {
+    heading: string;
+    subtitle: string;
+    items: Item[];
+    strengthsTitle: string;
+    strengths: Item[];
+  };
+  clients: { heading: string; subtitle: string };
   contact: {
     heading: string;
     subtitle: string;
