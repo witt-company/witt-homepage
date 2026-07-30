@@ -1,11 +1,12 @@
 import { notFound } from "next/navigation";
 
-import { getDictionary } from "@/i18n/dictionaries";
+import { Logo } from "@/components/ui/Logo";
 import { hasLocale } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
 export default async function Home({
-                                     params,
-                                   }: {
+  params,
+}: {
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;

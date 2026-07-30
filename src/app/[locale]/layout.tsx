@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-import { getDictionary } from "@/i18n/dictionaries";
 import { hasLocale, locales } from "@/i18n/config";
+import { getDictionary } from "@/i18n/dictionaries";
 
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 import "../globals.css";
@@ -12,8 +12,8 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-                                         params,
-                                       }: {
+  params,
+}: {
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
@@ -23,9 +23,9 @@ export async function generateMetadata({
 }
 
 export default async function RootLayout({
-                                           children,
-                                           params,
-                                         }: {
+  children,
+  params,
+}: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
@@ -34,7 +34,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} className="h-full antialiased">
-    <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }
