@@ -18,6 +18,7 @@ export type Dictionary = {
     heading: string;
     subtitle: string;
     cta: string;
+    labels: { info: string; links: string };
     info: { phone: string; email: string; address: string };
     quickLinks: { label: string; href: string }[];
   };

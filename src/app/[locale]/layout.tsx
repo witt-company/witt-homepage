@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-
+import { Footer } from "@/components/ui/Footer";
 import { Header } from "@/components/ui/Header";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { siteConfig } from "@/lib/site";
 
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
+
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -71,6 +73,7 @@ export default async function RootLayout({
       <body className="flex min-h-full flex-col">
         <Header nav={dict.nav} locale={locale} />
         {children}
+        <Footer contact={dict.contact} footer={dict.footer} />
       </body>
     </html>
   );
