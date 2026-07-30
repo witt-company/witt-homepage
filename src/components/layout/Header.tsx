@@ -22,6 +22,14 @@ type HeaderProps = {
 
 export function Header({ nav, locale }: HeaderProps) {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () =>
+      setScrolled(window.scrollY > window.innerHeight * 0.8);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -32,8 +40,16 @@ export function Header({ nav, locale }: HeaderProps) {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
+  const solid = scrolled || open;
+
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white">
+    <header
+      className={`sticky top-0 z-50 transition-colors ${
+        solid
+          ? "border-b border-zinc-200 bg-white"
+          : "border-b border-transparent bg-transparent"
+      }`}
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex-1">
@@ -42,7 +58,10 @@ export function Header({ nav, locale }: HeaderProps) {
               aria-label="WITT"
               className="inline-block"
             >
-              <Logo className="h-7 w-auto" />
+              <Logo
+                variant={solid ? "color" : "mono"}
+                className={`h-7 w-auto ${solid ? "" : "text-white"}`}
+              />
             </Link>
           </div>
 
@@ -53,7 +72,11 @@ export function Header({ nav, locale }: HeaderProps) {
                   <li key={item.key}>
                     <a
                       href={item.href}
-                      className="font-medium text-zinc-600 transition hover:text-primary"
+                      className={`font-medium transition ${
+                        solid
+                          ? "text-zinc-600 hover:text-primary"
+                          : "text-white/90 hover:text-white"
+                      }`}
                     >
                       {nav[item.key]}
                     </a>
@@ -63,15 +86,23 @@ export function Header({ nav, locale }: HeaderProps) {
             </nav>
 
             <div className="hidden items-center gap-4 md:flex">
-              <LocaleSwitcher />
-              <Button href="#contact" size="sm">
+              <LocaleSwitcher tone={solid ? "dark" : "light"} />
+              <Button
+                href="#contact"
+                size="sm"
+                variant={solid ? "primary" : "inverse"}
+              >
                 {nav.contact}
               </Button>
             </div>
 
             <button
               type="button"
-              className="rounded-md p-2 text-zinc-600 transition hover:bg-zinc-100 md:hidden"
+              className={`rounded-md p-2 transition md:hidden ${
+                solid
+                  ? "text-zinc-600 hover:bg-zinc-100"
+                  : "text-white hover:bg-white/10"
+              }`}
               aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
@@ -99,9 +130,12 @@ export function Header({ nav, locale }: HeaderProps) {
                 {nav[item.key]}
               </a>
             ))}
-            <div className="mt-3 flex items-center justify-between px-2">
-              <LocaleSwitcher onNavigate={() => setOpen(false)} />
-              <Button href="#contact" size="sm" onClick={() => setOpen(false)}>
+            <div
+              className="mt-3 flex items-center justify-between px-2"
+              onClick={() => setOpen(false)}
+            >
+              <LocaleSwitcher tone="dark" />
+              <Button href="#contact" size="sm">
                 {nav.contact}
               </Button>
             </div>

@@ -12,28 +12,30 @@ function switchLocalePath(pathname: string, target: string): string {
 }
 
 type LocaleSwitcherProps = {
-  onNavigate?: () => void;
+  tone?: "dark" | "light";
 };
 
-export function LocaleSwitcher({ onNavigate }: LocaleSwitcherProps) {
+export function LocaleSwitcher({ tone = "dark" }: LocaleSwitcherProps) {
   const pathname = usePathname();
   const current = pathname.split("/")[1];
+
+  const activeClass = tone === "light" ? "text-white" : "text-primary";
+  const idleClass =
+    tone === "light"
+      ? "text-white/60 hover:text-white"
+      : "text-zinc-500 hover:text-primary";
+  const sep = tone === "light" ? "text-white/40" : "text-zinc-300";
 
   return (
     <div className="flex items-center gap-2 text-sm font-semibold">
       {locales.map((locale, i) => (
         <span key={locale} className="flex items-center gap-2">
-          {i > 0 ? <span className="text-zinc-300">/</span> : null}
+          {i > 0 ? <span className={sep}>/</span> : null}
           <Link
             href={switchLocalePath(pathname, locale)}
             scroll={false}
-            onClick={onNavigate}
             aria-current={locale === current ? "true" : undefined}
-            className={
-              locale === current
-                ? "text-primary"
-                : "text-zinc-500 hover:text-primary"
-            }
+            className={locale === current ? activeClass : idleClass}
           >
             {locale.toUpperCase()}
           </Link>

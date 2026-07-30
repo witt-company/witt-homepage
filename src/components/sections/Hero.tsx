@@ -10,9 +10,10 @@ type HeroProps = {
 
 export function Hero({ content }: HeroProps) {
   return (
-    <section className="relative flex min-h-[calc(100svh-4rem)] items-center justify-center overflow-hidden">
-      {/* 배경 — 나중에 실제 사진으로 교체 (public/images/hero.jpg) */}
+    <section className="relative -mt-16 flex min-h-svh items-center justify-center overflow-hidden">
+      {/* 배경: 그라디언트(폴백) + 사진 (사진 없으면 그라디언트가 보임) */}
       <div className="absolute inset-0 -z-20 bg-[image:var(--witt-gradient-green)]" />
+      <div className="absolute inset-0 -z-20 bg-[url('https://picsum.photos/1920/1080')] bg-cover bg-center" />
       <div className="absolute inset-0 -z-10 bg-black/40" />
 
       <Container className="py-24 text-center text-white">
@@ -32,7 +33,6 @@ export function Hero({ content }: HeroProps) {
         </div>
       </Container>
 
-      {/* 스크롤 인디케이터 */}
       <a
         href="#about"
         aria-label="아래로 스크롤"
