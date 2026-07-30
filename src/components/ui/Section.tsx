@@ -10,10 +10,10 @@ const toneClass: Record<NonNullable<SectionProps["tone"]>, string> = {
 };
 
 export function Section({
-                          tone = "default",
-                          className,
-                          ...props
-                        }: SectionProps) {
+  tone = "default",
+  className,
+  ...props
+}: SectionProps) {
   return (
     <section
       className={["py-20 sm:py-28", toneClass[tone], className]

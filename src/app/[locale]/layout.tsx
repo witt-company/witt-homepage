@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
+import { Header } from "@/components/ui/Header";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { siteConfig } from "@/lib/site";
@@ -59,10 +60,18 @@ export default async function RootLayout({
 }) {
   const { locale } = await params;
   if (!hasLocale(locale)) notFound();
+  const dict = await getDictionary(locale);
 
   return (
-    <html lang={locale} className="h-full antialiased">
-      <body className="flex min-h-full flex-col">{children}</body>
+    <html
+      lang={locale}
+      data-scroll-behavior="smooth"
+      className="h-full antialiased"
+    >
+      <body className="flex min-h-full flex-col">
+        <Header nav={dict.nav} locale={locale} />
+        {children}
+      </body>
     </html>
   );
 }
