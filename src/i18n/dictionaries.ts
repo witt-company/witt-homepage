@@ -1,10 +1,12 @@
 import "server-only";
 
 import type { Locale } from "@/i18n/config";
+import type { Dictionary } from "@/i18n/types";
 
-const dictionaries = {
+const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   ko: () => import("@/i18n/dictionaries/ko.json").then((m) => m.default),
   en: () => import("@/i18n/dictionaries/en.json").then((m) => m.default),
 };
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getDictionary = async (locale: Locale): Promise<Dictionary> =>
+  dictionaries[locale]();

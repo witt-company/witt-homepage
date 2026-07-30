@@ -1,10 +1,112 @@
 {
   "meta": {
     "title": "WITT Co., Ltd. | Smart Energy ICT Solutions",
-    "description": "WITT is a smart energy ICT solutions company."
+    "description": "WITT is a smart energy ICT company providing remote metering, energy data platforms, and public/enterprise systems powered by AI, big data, and OT security."
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "technology": "Technology",
+    "research": "R&D",
+    "contact": "Contact"
   },
   "hero": {
     "eyebrow": "Smart Energy ICT Solution Provider",
-    "title": "An innovative ICT platform shaping the future of energy"
+    "title": "An innovative ICT platform transforming the future of energy",
+    "subtitle": "Through energy data and AI, WITT builds a safer, cleaner, and more efficient world.",
+    "cta": "Explore our solutions"
+  },
+  "about": {
+    "heading": "Mission & Vision",
+    "items": [
+      {
+        "title": "Our Mission",
+        "body": "Leading digital innovation and efficiency across the energy industry through cutting-edge software development."
+      },
+      {
+        "title": "Our Vision",
+        "body": "Growing into a leading software company that drives the global energy ICT solutions market."
+      },
+      {
+        "title": "Core Value",
+        "body": "Growing together with our clients as a partner grounded in Innovation, Trust, and Technology."
+      }
+    ]
+  },
+  "services": {
+    "heading": "Core Services",
+    "subtitle": "WITT delivers digital innovation through custom development services for public institutions and enterprises.",
+    "items": [
+      {
+        "title": "User-Centered UI/UX Design",
+        "body": "We design intuitive service experiences centered on the user. Interfaces built for usability and accessibility deliver an optimal experience, with responsive design and cross-platform compatibility."
+      },
+      {
+        "title": "Reliable System Development",
+        "body": "We build systems specialized for public institutions with stability and scalability in mind. Robust architecture and standard technologies ensure long-term operation and easy maintenance, prioritizing security and stability."
+      },
+      {
+        "title": "Expert Proposals & Planning",
+        "body": "We cover the full process from RFP analysis to proposal writing and presentation support. We accurately capture client needs, propose optimal solutions, and establish systematic project plans and execution strategies."
+      }
+    ]
+  },
+  "technology": {
+    "heading": "What Sets WITT Apart",
+    "features": [
+      {
+        "title": "Remote Metering System Development",
+        "body": "We provide IoT-based metering solutions for real-time data collection and management. Automated collection using sensors and communications maximizes efficiency, and cloud-based analytics deliver actionable insights."
+      },
+      {
+        "title": "Fast Technical Support",
+        "body": "We provide rapid technical support and documented responses. Our expert team's systematic support process ensures fast, accurate problem resolution, with continuous communication that puts customer satisfaction first."
+      },
+      {
+        "title": "Systematic Operation & Maintenance",
+        "body": "We maintain system stability and support continuous improvement. Proactive monitoring prevents incidents, while regular updates and performance optimization ensure stable operation and higher user satisfaction."
+      }
+    ]
+  },
+  "research": {
+    "heading": "WITT Research Lab",
+    "subtitle": "WITT Research Lab develops core technologies in AI, big data, and IoT, researching innovative solutions for the future of energy ICT.",
+    "areas": [
+      {
+        "title": "AI / Machine Learning",
+        "body": "We focus on data-driven intelligent systems, including energy demand and generation forecasting and equipment anomaly diagnosis algorithms."
+      },
+      {
+        "title": "Big Data Platform / Cloud",
+        "body": "We reliably collect and process large-scale energy data and research highly scalable cloud-native architectures."
+      },
+      {
+        "title": "Energy–Tourism Content",
+        "body": "We research experiential tourism products using energy facilities (renewable plants, smart grids) and strategies to integrate ICT-based tourism platforms."
+      },
+      {
+        "title": "Industrial Security (OT Security)",
+        "body": "We develop specialized operational technology (OT) security and intrusion-prevention solutions that counter cyber threats to energy infrastructure."
+      }
+    ]
+  },
+  "contact": {
+    "heading": "Realize digital innovation with WITT.",
+    "subtitle": "Send us a message about custom system development, technical partnerships, recruiting, or any other inquiry, and our team will get back to you promptly.",
+    "cta": "Email us",
+    "info": {
+      "phone": "010-6850-7890",
+      "email": "kkytour@gmail.com",
+      "address": "Room 414, Energy Valley Business Development Center, 370 Green-ro, Naju-si, Jeollanam-do, Republic of Korea"
+    },
+    "quickLinks": [
+      { "label": "About", "href": "#about" },
+      { "label": "Services", "href": "#services" },
+      { "label": "Technology", "href": "#technology" },
+      { "label": "R&D", "href": "#research" }
+    ]
+  },
+  "footer": {
+    "copyright": "WITT Co., Ltd. All rights reserved."
   }
 }
