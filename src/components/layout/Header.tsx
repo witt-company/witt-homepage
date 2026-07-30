@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
-import { LocaleSwitcher } from "@/components/ui/LocaleSwitcher";
+import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 import { Logo } from "@/components/ui/Logo";
 import type { Dictionary } from "@/i18n/types";
 

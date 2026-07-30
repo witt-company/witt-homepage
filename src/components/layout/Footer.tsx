@@ -1,5 +1,5 @@
+import { ContactInfo } from "@/components/layout/ContactInfo";
 import { Button } from "@/components/ui/Button";
-import { ContactInfo } from "@/components/ui/ContactInfo";
 import type { Dictionary } from "@/i18n/types";
 
 type FooterProps = {
