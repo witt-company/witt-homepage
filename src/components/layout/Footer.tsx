@@ -1,4 +1,5 @@
 import { ContactInfo } from "@/components/layout/ContactInfo";
+import { Logo } from "@/components/ui/Logo";
 import type { Dictionary } from "@/i18n/types";
 
 type FooterProps = {
@@ -10,26 +11,34 @@ export function Footer({ contact, footer }: FooterProps) {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-zinc-900 text-zinc-300">
-      <div className="mx-auto w-full max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
-        <div className="grid gap-10 sm:grid-cols-2">
+    <footer className="bg-[#0a3b34] text-gray-300">
+      <div className="mx-auto w-full max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-10 border-b border-gray-700 pb-10 md:grid-cols-3">
+          {/* 브랜드 */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold tracking-wide text-white uppercase">
+            <Logo variant="mono" className="h-7 w-auto text-white" />
+            <p className="mt-4 text-sm tracking-wide text-gray-400">
+              SMART ENERGY IT SOLUTIONS
+            </p>
+          </div>
+
+          {/* 연락처 */}
+          <div>
+            <h4 className="mb-4 text-base font-semibold text-teal-400">
               {contact.labels.info}
-            </h3>
+            </h4>
             <ContactInfo info={contact.info} />
           </div>
+
+          {/* 바로 가기 */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold tracking-wide text-white uppercase">
+            <h4 className="mb-4 text-base font-semibold text-teal-400">
               {contact.labels.links}
-            </h3>
+            </h4>
             <ul className="space-y-2">
               {contact.quickLinks.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-zinc-400 hover:text-white"
-                  >
+                  <a href={link.href} className="transition hover:text-white">
                     {link.label}
                   </a>
                 </li>
@@ -37,9 +46,10 @@ export function Footer({ contact, footer }: FooterProps) {
             </ul>
           </div>
         </div>
-        <div className="mt-12 border-t border-zinc-800 pt-6 text-sm text-zinc-500">
+
+        <p className="mt-8 text-center text-sm text-gray-500">
           © {year} {footer.copyright}
-        </div>
+        </p>
       </div>
     </footer>
   );
