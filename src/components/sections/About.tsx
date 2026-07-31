@@ -8,9 +8,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/i18n/types";
 
 const IMAGES = [
-  "https://picsum.photos/seed/witt-about-1/900/700",
-  "https://picsum.photos/seed/witt-about-2/900/700",
-  "https://picsum.photos/seed/witt-about-3/900/700",
+  "/images/about/mission.jpg",
+  "/images/about/vision.jpg",
+  "/images/about/value.jpg",
 ];
 
 type AboutProps = {

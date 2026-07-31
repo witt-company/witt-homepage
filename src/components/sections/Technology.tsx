@@ -5,10 +5,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/i18n/types";
 
 const IMAGES = [
-  "https://picsum.photos/seed/witt-tech-1/900/1200",
-  "https://picsum.photos/seed/witt-tech-2/900/1200",
-  "https://picsum.photos/seed/witt-tech-3/900/1200",
+  "/images/technology/metering.jpg",
+  "/images/technology/support.jpg",
+  "/images/technology/operation.jpg",
 ];
+
 // 카드 상단 카테고리 라벨 (임시 — 원하면 사전으로 이동/수정)
 const CATEGORIES = [
   "Smart Metering",
