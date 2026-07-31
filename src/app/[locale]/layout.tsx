@@ -1,5 +1,6 @@
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { ScrollToTop } from "@/components/ui/ScrollToTop";
 import { hasLocale, locales } from "@/i18n/config";
 import { getDictionary } from "@/i18n/dictionaries";
 import { siteConfig } from "@/lib/site";
@@ -74,6 +75,7 @@ export default async function RootLayout({
         <Header nav={dict.nav} locale={locale} />
         {children}
         <Footer contact={dict.contact} footer={dict.footer} />
+        <ScrollToTop label={locale === "ko" ? "맨 위로" : "Back to top"} />
       </body>
     </html>
   );
