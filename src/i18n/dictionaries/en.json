@@ -14,7 +14,9 @@
     "eyebrow": "Smart Energy ICT Solution Provider",
     "title": "An innovative ICT platform transforming the future of energy",
     "subtitle": "Through energy data and AI, WITT builds a safer, cleaner, and more efficient world.",
-    "cta": "Explore our solutions"
+    "cta": "Explore our solutions",
+    "pauseLabel": "Pause background video",
+    "playLabel": "Play background video"
   },
   "about": {
     "heading": "Mission & Vision",

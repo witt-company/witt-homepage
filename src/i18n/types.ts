@@ -9,7 +9,14 @@ export type Dictionary = {
     clients: string;
     contact: string;
   };
-  hero: { eyebrow: string; title: string; subtitle: string; cta: string };
+  hero: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    cta: string;
+    pauseLabel: string;
+    playLabel: string;
+  };
   about: { heading: string; items: Item[] };
   services: {
     heading: string;

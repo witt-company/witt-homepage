@@ -1,6 +1,6 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 
-import { Button } from "@/components/ui/Button";
+import { HeroBackground } from "@/components/sections/HeroBackground";
 import { Container } from "@/components/ui/Container";
 import type { Dictionary } from "@/i18n/types";
 
@@ -10,33 +10,26 @@ type HeroProps = {
 
 export function Hero({ content }: HeroProps) {
   return (
-    <section className="relative -mt-16 flex min-h-svh items-center justify-center overflow-hidden">
-      {/* 배경: 그라디언트(폴백) + 사진 (사진 없으면 그라디언트가 보임) */}
-      <div className="absolute inset-0 -z-20 bg-[image:var(--witt-gradient-green)]" />
-      <div className="absolute inset-0 -z-20 bg-[url('https://picsum.photos/1920/1080')] bg-cover bg-center" />
-      <div className="absolute inset-0 -z-10 bg-black/40" />
+    <section className="relative -mt-16 flex min-h-svh flex-col justify-end overflow-hidden">
+      <HeroBackground
+        pauseLabel={content.pauseLabel}
+        playLabel={content.playLabel}
+      />
 
-      <Container className="py-24 text-center text-white">
-        <p className="text-base font-semibold tracking-wide text-white/80 sm:text-lg">
-          {content.eyebrow}
-        </p>
-        <h1 className="mx-auto mt-4 max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
+      <Container className="relative z-10 pb-32 text-white sm:pb-36">
+        <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
           {content.title}
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
+        <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90">
           {content.subtitle}
         </p>
-        <div className="mt-10">
-          <Button href="#services" variant="inverse">
-            {content.cta}
-          </Button>
-        </div>
       </Container>
 
+      {/* 스크롤 힌트: 하단 중앙 (컨트롤보다 아래 줄) */}
       <a
         href="#about"
         aria-label="아래로 스크롤"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 transition hover:text-white"
+        className="absolute bottom-6 left-1/2 z-10 -translate-x-1/2 text-white/70 transition hover:text-white"
       >
         <ChevronDownIcon className="h-6 w-6 animate-bounce" />
       </a>
