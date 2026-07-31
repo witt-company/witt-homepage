@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { PauseIcon, PlayIcon } from "@heroicons/react/24/solid";
 
 import { Container } from "@/components/ui/Container";
@@ -44,8 +45,15 @@ export function HeroBackground({ pauseLabel, playLabel }: HeroBackgroundProps) {
       {/* 1) 폴백 그라디언트 */}
       <div className="absolute inset-0 bg-[image:var(--witt-gradient-green)]" />
 
-      {/* 2) 포스터 (LCP) — 실제 에셋 준비되면 복구 */}
-      {/* <Image src="/images/hero-poster.jpg" alt="" fill priority sizes="100vw" className="object-cover" /> */}
+      {/* 2) 포스터 (LCP) */}
+      <Image
+        src="/images/hero-poster.jpg"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
 
       {/* 3) 배경 영상 */}
       {showVideo && (
@@ -59,6 +67,7 @@ export function HeroBackground({ pauseLabel, playLabel }: HeroBackgroundProps) {
           loop
           playsInline
           preload="auto"
+          poster="/images/hero-poster.jpg"
           aria-hidden="true"
           onCanPlay={() => setReady(true)}
           onTimeUpdate={(e) => {
@@ -71,17 +80,15 @@ export function HeroBackground({ pauseLabel, playLabel }: HeroBackgroundProps) {
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
         >
-          <source
-            src="https://www.w3schools.com/html/mov_bbb.mp4"
-            type="video/mp4"
-          />
+          <source src="/videos/hero.webm" type="video/webm" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       )}
 
       {/* 4) 어두운 오버레이 */}
       <div className="absolute inset-0 bg-black/40" />
 
-      {/* 5) 재생/일시정지 + 프로그레스 (Container 정렬 → 헤더/문구와 좌측선 일치) */}
+      {/* 5) 재생/일시정지 + 프로그레스 */}
       {showVideo && ready && (
         <div className="absolute inset-x-0 bottom-16 z-20">
           <Container>
