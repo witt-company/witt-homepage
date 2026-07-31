@@ -42,30 +42,53 @@ export function Contact({ content }: ContactProps) {
           className="mx-auto mt-12 max-w-xl rounded-2xl border border-zinc-200 bg-background p-6 shadow-sm sm:p-8"
         >
           <div className="grid gap-4">
-            <input
-              type="text"
-              required
-              placeholder={content.form.name}
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              className={inputClass}
-            />
-            <input
-              type="email"
-              required
-              placeholder={content.form.email}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className={inputClass}
-            />
-            <textarea
-              required
-              rows={5}
-              placeholder={content.form.message}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              className={inputClass}
-            />
+            <div>
+              <label htmlFor="contact-name" className="sr-only">
+                {content.form.name}
+              </label>
+              <input
+                id="contact-name"
+                name="name"
+                type="text"
+                required
+                autoComplete="name"
+                placeholder={content.form.name}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-email" className="sr-only">
+                {content.form.email}
+              </label>
+              <input
+                id="contact-email"
+                name="email"
+                type="email"
+                required
+                autoComplete="email"
+                placeholder={content.form.email}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className={inputClass}
+              />
+            </div>
+            <div>
+              <label htmlFor="contact-message" className="sr-only">
+                {content.form.message}
+              </label>
+              <textarea
+                id="contact-message"
+                name="message"
+                required
+                rows={5}
+                placeholder={content.form.message}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className={inputClass}
+              />
+            </div>
             <Button type="submit" className="w-full">
               {content.form.submit}
             </Button>
