@@ -88,7 +88,6 @@ export function HeroBackground({ pauseLabel, playLabel }: HeroBackgroundProps) {
           onPlay={() => setPlaying(true)}
           onPause={() => setPlaying(false)}
         >
-          <source src="/videos/hero.webm" type="video/webm" />
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
       )}

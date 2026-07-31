@@ -68,8 +68,8 @@ export function Services({ content }: ServicesProps) {
                       aria-current={isActive ? "true" : undefined}
                       className={`flex w-full items-start gap-4 border-l-2 py-3 pr-2 pl-4 text-left transition-colors ${
                         isActive
-                          ? "border-primary text-primary"
-                          : "border-zinc-200 text-zinc-500 hover:border-zinc-400 hover:text-zinc-800"
+                          ? "border-primary text-primary-strong"
+                          : "border-zinc-200 text-zinc-600 hover:border-zinc-400 hover:text-zinc-800"
                       }`}
                     >
                       <span className="pt-0.5 text-sm font-semibold tabular-nums">
@@ -103,7 +103,7 @@ export function Services({ content }: ServicesProps) {
                   }}
                 />
                 <div className="mt-6 flex items-baseline gap-3">
-                  <span className="text-sm font-semibold text-primary tabular-nums">
+                  <span className="text-sm font-semibold text-primary-strong tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <h3 className="text-2xl font-semibold tracking-tight">

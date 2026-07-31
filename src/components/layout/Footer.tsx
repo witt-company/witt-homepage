@@ -24,17 +24,17 @@ export function Footer({ contact, footer }: FooterProps) {
 
           {/* 연락처 */}
           <div>
-            <h4 className="mb-4 text-base font-semibold text-teal-400">
+            <h3 className="mb-4 text-base font-semibold text-teal-400">
               {contact.labels.info}
-            </h4>
+            </h3>
             <ContactInfo info={contact.info} />
           </div>
 
           {/* 바로 가기 */}
           <div>
-            <h4 className="mb-4 text-base font-semibold text-teal-400">
+            <h3 className="mb-4 text-base font-semibold text-teal-400">
               {contact.labels.links}
-            </h4>
+            </h3>
             <ul className="space-y-2">
               {contact.quickLinks.map((link) => (
                 <li key={link.href}>
@@ -47,7 +47,7 @@ export function Footer({ contact, footer }: FooterProps) {
           </div>
         </div>
 
-        <p className="mt-8 text-center text-sm text-gray-500">
+        <p className="mt-8 text-center text-sm text-gray-400">
           © {year} {footer.copyright}
         </p>
       </div>

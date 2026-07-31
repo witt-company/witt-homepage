@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import {
   ArrowLongLeftIcon,
   ArrowLongRightIcon,
@@ -92,11 +93,13 @@ export function Card({ card }: { card: CardData }) {
         </p>
       </div>
       {/* 이미지 (hover 확대) */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      {}
+      <Image
         src={card.src}
         alt={card.title}
-        className="absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+        fill
+        sizes="(max-width: 768px) 224px, 384px"
+        className="z-10 object-cover transition-transform duration-300 ease-out group-hover:scale-105"
       />
     </div>
   );
