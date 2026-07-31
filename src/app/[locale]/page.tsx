@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 
 import { About } from "@/components/sections/About";
-import { Clients } from "@/components/sections/Clients";
 import { Contact } from "@/components/sections/Contact";
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
@@ -24,7 +23,7 @@ export default async function Home({
       <About content={dict.about} />
       <Services content={dict.services} />
       <Technology content={dict.technology} />
-      <Clients content={dict.clients} />
+      {/*<Clients content={dict.clients} />*/}
       <Contact content={dict.contact} />
     </main>
   );
