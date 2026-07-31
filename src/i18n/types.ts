@@ -14,9 +14,8 @@ export type Dictionary = {
     heading: string;
     subtitle: string;
     items: Item[];
-    strengthsTitle: string;
-    strengths: Item[];
   };
+  technology: { heading: string; features: Item[] };
   clients: { heading: string; subtitle: string };
   contact: {
     heading: string;

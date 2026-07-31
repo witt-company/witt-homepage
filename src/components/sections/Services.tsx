@@ -6,7 +6,6 @@ import {
 
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
-import { FeatureItem } from "@/components/ui/FeatureItem";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { Dictionary } from "@/i18n/types";
@@ -39,18 +38,6 @@ export function Services({ content }: ServicesProps) {
               />
             );
           })}
-        </div>
-
-        {/* 차별화 기술 강점 (기존 Technology 흡수) */}
-        <div className="mt-20">
-          <h3 className="text-center text-2xl font-semibold tracking-tight sm:text-3xl">
-            {content.strengthsTitle}
-          </h3>
-          <div className="mx-auto mt-10 grid max-w-3xl gap-8">
-            {content.strengths.map((s) => (
-              <FeatureItem key={s.title} title={s.title} body={s.body} />
-            ))}
-          </div>
         </div>
       </Container>
     </Section>
