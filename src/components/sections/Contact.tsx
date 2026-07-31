@@ -39,7 +39,7 @@ export function Contact({ content }: ContactProps) {
         />
         <form
           onSubmit={handleSubmit}
-          className="mx-auto mt-12 max-w-xl rounded-2xl border border-zinc-200 bg-background p-6 shadow-sm sm:p-8"
+          className="mx-auto mt-14 max-w-xl rounded-2xl border border-zinc-200 bg-background p-6 shadow-sm sm:p-8"
         >
           <div className="grid gap-4">
             <div>

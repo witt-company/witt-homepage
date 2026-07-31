@@ -51,7 +51,7 @@ export function Services({ content }: ServicesProps) {
           align="center"
         />
 
-        <div className="mt-16 grid gap-10 lg:grid-cols-[300px_1fr] lg:gap-16">
+        <div className="mt-14 grid gap-10 lg:grid-cols-[300px_1fr] lg:gap-16">
           {/* 좌: 고정 목차 (데스크톱) */}
           <nav
             aria-label={content.heading}

@@ -25,7 +25,7 @@ export function About({ content }: AboutProps) {
       <Container>
         <SectionHeading title={content.heading} align="center" />
 
-        <div className="mt-12 flex h-[520px] flex-col gap-4 md:h-[420px] md:flex-row">
+        <div className="mt-14 flex h-[520px] flex-col gap-4 md:h-[420px] md:flex-row">
           {content.items.map((item, i) => {
             const isActive = active === i;
             return (
