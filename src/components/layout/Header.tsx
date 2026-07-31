@@ -12,6 +12,7 @@ import type { Dictionary } from "@/i18n/types";
 const NAV_ITEMS: { key: keyof Dictionary["nav"]; href: string }[] = [
   { key: "about", href: "#about" },
   { key: "services", href: "#services" },
+  { key: "technology", href: "#technology" },
   { key: "clients", href: "#clients" },
 ];
 

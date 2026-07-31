@@ -5,6 +5,7 @@ export type Dictionary = {
   nav: {
     about: string;
     services: string;
+    technology: string;
     clients: string;
     contact: string;
   };

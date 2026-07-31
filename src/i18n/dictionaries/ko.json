@@ -6,6 +6,7 @@
   "nav": {
     "about": "회사 소개",
     "services": "핵심 서비스",
+    "technology": "기술력",
     "clients": "고객사",
     "contact": "문의하기"
   },
@@ -104,6 +105,7 @@
     "quickLinks": [
       { "label": "회사 소개", "href": "#about" },
       { "label": "핵심 서비스", "href": "#services" },
+      { "label": "기술력", "href": "#technology" },
       { "label": "고객사", "href": "#clients" },
       { "label": "문의하기", "href": "#contact" }
     ]
