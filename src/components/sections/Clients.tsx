@@ -35,7 +35,7 @@ export function Clients({ content }: ClientsProps) {
                     <img
                       src={partner.logo}
                       alt={partner.name}
-                      className="h-8 w-auto grayscale transition duration-300 hover:grayscale-0"
+                      className="h-8 w-auto transition duration-300 md:grayscale md:hover:grayscale-0"
                     />
                   ) : (
                     <span className="text-lg font-semibold whitespace-nowrap text-zinc-400">
