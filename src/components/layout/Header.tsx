@@ -73,10 +73,10 @@ export function Header({ nav, locale }: HeaderProps) {
                   <li key={item.key}>
                     <a
                       href={item.href}
-                      className={`font-medium transition ${
+                      className={`rounded-sm font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 ${
                         solid
-                          ? "text-zinc-600 hover:text-primary"
-                          : "text-white/90 hover:text-white"
+                          ? "text-zinc-600 hover:text-primary focus-visible:outline-primary"
+                          : "text-white/90 hover:text-white focus-visible:outline-white"
                       }`}
                     >
                       {nav[item.key]}
@@ -126,7 +126,7 @@ export function Header({ nav, locale }: HeaderProps) {
                 key={item.key}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-2 text-base font-medium text-zinc-700 hover:bg-zinc-50 hover:text-primary"
+                className="rounded-md px-2 py-2 text-base font-medium text-zinc-700 transition hover:bg-zinc-50 hover:text-primary focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary"
               >
                 {nav[item.key]}
               </a>
