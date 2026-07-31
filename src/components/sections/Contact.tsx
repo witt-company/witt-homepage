@@ -30,7 +30,7 @@ export function Contact({ content }: ContactProps) {
   };
 
   return (
-    <Section id="contact" tone="muted">
+    <Section id="contact" tone="default">
       <Container>
         <SectionHeading
           title={content.heading}
