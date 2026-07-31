@@ -25,7 +25,7 @@ export function About({ content }: AboutProps) {
       <Container>
         <SectionHeading title={content.heading} align="center" />
 
-        <div className="mt-12 flex flex-col gap-4 md:h-[420px] md:flex-row">
+        <div className="mt-12 flex h-[520px] flex-col gap-4 md:h-[420px] md:flex-row">
           {content.items.map((item, i) => {
             const isActive = active === i;
             return (
@@ -37,22 +37,24 @@ export function About({ content }: AboutProps) {
                 style={{
                   backgroundImage: `url('${IMAGES[i]}'), var(--witt-gradient-green)`,
                 }}
-                className={`group relative min-h-[220px] overflow-hidden rounded-2xl bg-cover bg-center text-left transition-all duration-500 ease-out md:min-h-0 ${
-                  isActive ? "md:flex-[3]" : "md:flex-[1]"
+                className={`group relative overflow-hidden rounded-2xl bg-cover bg-center text-left transition-all duration-500 ease-out ${
+                  isActive ? "flex-[3]" : "flex-[1]"
                 }`}
               >
-                {/* 어두운 오버레이 (음수 z 없이) */}
                 <div className="absolute inset-0 bg-black/50 transition-colors group-hover:bg-black/40" />
-                {/* 콘텐츠 (오버레이 위) */}
                 <div className="relative flex h-full flex-col justify-end p-6 text-white">
                   <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p
-                    className={`mt-2 max-w-md leading-relaxed text-white/85 transition-opacity duration-300 ${
-                      isActive ? "opacity-100" : "opacity-100 md:opacity-0"
+                  <div
+                    className={`grid transition-all duration-300 ${
+                      isActive
+                        ? "mt-2 grid-rows-[1fr] opacity-100"
+                        : "grid-rows-[0fr] opacity-0"
                     }`}
                   >
-                    {item.body}
-                  </p>
+                    <p className="max-w-md overflow-hidden leading-relaxed text-white/85">
+                      {item.body}
+                    </p>
+                  </div>
                 </div>
               </button>
             );

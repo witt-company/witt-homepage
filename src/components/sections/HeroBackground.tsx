@@ -18,20 +18,28 @@ export function HeroBackground({ pauseLabel, playLabel }: HeroBackgroundProps) {
   const [ready, setReady] = useState(false);
   const [playing, setPlaying] = useState(false);
 
-  // 데스크톱 + 모션 허용 + 데이터 절약 아님일 때만 영상 로드
+  // 모션 허용 + 데이터 절약 아님이면 로드 (모바일 포함)
   useEffect(() => {
     const decide = () => {
       const okMotion = !window.matchMedia("(prefers-reduced-motion: reduce)")
         .matches;
-      const bigScreen = window.matchMedia("(min-width: 768px)").matches;
       const conn = (
         navigator as Navigator & { connection?: { saveData?: boolean } }
       ).connection;
-      setShowVideo(okMotion && bigScreen && conn?.saveData !== true);
+      setShowVideo(okMotion && conn?.saveData !== true);
     };
     const raf = requestAnimationFrame(decide);
     return () => cancelAnimationFrame(raf);
   }, []);
+
+  // 모바일 자동재생 안정화: React가 muted를 DOM 프로퍼티로 확실히 안 넣는 이슈 대비
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    const p = v.play();
+    if (p) p.catch(() => {});
+  }, [showVideo]);
 
   const toggle = () => {
     const v = videoRef.current;
