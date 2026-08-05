@@ -109,7 +109,6 @@
       { "label": "About", "href": "#about" },
       { "label": "Services", "href": "#services" },
       { "label": "Technology", "href": "#technology" },
-      { "label": "Clients", "href": "#clients" },
       { "label": "Contact", "href": "#contact" }
     ]
   },

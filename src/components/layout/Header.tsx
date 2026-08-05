@@ -13,7 +13,7 @@ const NAV_ITEMS: { key: keyof Dictionary["nav"]; href: string }[] = [
   { key: "about", href: "#about" },
   { key: "services", href: "#services" },
   { key: "technology", href: "#technology" },
-  { key: "clients", href: "#clients" },
+  // { key: "clients", href: "#clients" },
 ];
 
 type HeaderProps = {
