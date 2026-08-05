@@ -48,11 +48,13 @@ export async function generateMetadata({
       description: dict.meta.description,
       url: `/${locale}`,
       locale: locale === "ko" ? "ko_KR" : "en_US",
+      images: [{ url: "/opengraph-image.jpg", width: 997, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: dict.meta.title,
       description: dict.meta.description,
+      images: ["/opengraph-image.jpg"],
     },
     verification: {
       google: "fq90lIjdOGDTYsOGmED9qpXaG-xEw84F7RtGB_vCatg",
