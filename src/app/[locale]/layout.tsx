@@ -7,7 +7,7 @@ import { siteConfig } from "@/lib/site";
 
 import "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css";
 
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 
 import "../globals.css";
@@ -15,6 +15,10 @@ import "../globals.css";
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
+
+export const viewport: Viewport = {
+  themeColor: "#0c846c",
+};
 
 export async function generateMetadata({
   params,
