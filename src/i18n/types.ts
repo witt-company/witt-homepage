@@ -29,7 +29,15 @@ export type Dictionary = {
     heading: string;
     subtitle: string;
     labels: { info: string; links: string };
-    form: { name: string; email: string; message: string; submit: string };
+    form: {
+      name: string;
+      email: string;
+      message: string;
+      submit: string;
+      sending: string;
+      success: string;
+      error: string;
+    };
     info: { phone: string; email: string; address: string };
     quickLinks: { label: string; href: string }[];
   };

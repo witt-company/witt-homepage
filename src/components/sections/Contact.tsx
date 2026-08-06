@@ -1,7 +1,9 @@
 "use client";
 
 import { ComponentProps, useState } from "react";
+import { toast } from "sonner";
 
+import { sendContact } from "@/app/actions/contact";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
@@ -19,14 +21,30 @@ export function Contact({ content }: ContactProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [company, setCompany] = useState(""); // 허니팟
+  const [pending, setPending] = useState(false);
 
-  const handleSubmit: NonNullable<ComponentProps<"form">["onSubmit"]> = (e) => {
+  const handleSubmit: NonNullable<ComponentProps<"form">["onSubmit"]> = async (
+    e,
+  ) => {
     e.preventDefault();
-    const subject = `[WITT] ${name || email}`;
-    const body = `${message}\n\n---\n${name} <${email}>`;
-    window.location.href = `mailto:${content.info.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    if (pending) return;
+    setPending(true);
+    try {
+      const result = await sendContact({ name, email, message, company });
+      if (result.ok) {
+        toast.success(content.form.success);
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        toast.error(content.form.error);
+      }
+    } catch {
+      toast.error(content.form.error);
+    } finally {
+      setPending(false);
+    }
   };
 
   return (
@@ -89,8 +107,25 @@ export function Contact({ content }: ContactProps) {
                 className={inputClass}
               />
             </div>
-            <Button type="submit" className="w-full">
-              {content.form.submit}
+
+            {/* 허니팟: 사용자에겐 숨김, 봇만 채움 */}
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              className="hidden"
+            />
+
+            <Button
+              type="submit"
+              disabled={pending}
+              className="w-full disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              {pending ? content.form.sending : content.form.submit}
             </Button>
           </div>
         </form>

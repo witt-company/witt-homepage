@@ -98,7 +98,10 @@
       "name": "Name",
       "email": "Email",
       "message": "Message",
-      "submit": "Send inquiry"
+      "submit": "Send inquiry",
+      "sending": "Sending…",
+      "success": "Your message has been sent. We'll get back to you shortly.",
+      "error": "Something went wrong. Please try again in a moment."
     },
     "info": {
       "phone": "010-6850-7890",

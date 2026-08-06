@@ -12,6 +12,8 @@ import { notFound } from "next/navigation";
 
 import "../globals.css";
 
+import { Toaster } from "sonner";
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -87,6 +89,7 @@ export default async function RootLayout({
         {children}
         <Footer contact={dict.contact} footer={dict.footer} />
         <ScrollToTop label={locale === "ko" ? "맨 위로" : "Back to top"} />
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   );
